@@ -32,3 +32,4 @@ D:\LearningC#\razor\razor\obj\Debug\net8.0\refint\razor.dll
 D:\LearningC#\razor\razor\obj\Debug\net8.0\razor.pdb
 D:\LearningC#\razor\razor\obj\Debug\net8.0\razor.genruntimeconfig.cache
 D:\LearningC#\razor\razor\obj\Debug\net8.0\ref\razor.dll
+D:\LearningC#\razor\razor\obj\Debug\net8.0\razor.sourcelink.json
