@@ -1,0 +1,30 @@
+﻿@page
+@model razor.Pages.Products.IndexModel
+
+<h2>Danh sách sản phẩm</h2>
+<a asp-page="CreateProduct" class="btn btn-primary">Thêm sản phẩm</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Mô tả</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price.ToString("C")</td>
+                <td>@product.Description</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@product.Id">Sửa</a> |
+                    <a asp-page="Delete" asp-route-id="@product.Id">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

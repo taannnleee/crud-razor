@@ -1,0 +1,35 @@
+﻿@page
+@model razor.Pages.Products.DeleteModel
+
+<h2>Xóa Sản Phẩm</h2>
+
+@if (Model.Product != null)
+{
+    <p>Bạn có chắc chắn muốn xóa sản phẩm sau?</p>
+
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <td>@Model.Product.Id</td>
+        </tr>
+        <tr>
+            <th>Tên sản phẩm</th>
+            <td>@Model.Product.Name</td>
+        </tr>
+        <tr>
+            <th>Giá</th>
+            <td>@Model.Product.Price</td>
+        </tr>
+    </table>
+
+    <form method="post">
+        <input type="hidden" asp-for="Product.Id" />
+        <button type="submit" class="btn btn-danger">Xóa</button>
+        <a asp-page="Index" class="btn btn-secondary">Hủy</a>
+    </form>
+}
+else
+{
+    <p class="text-danger">Không tìm thấy sản phẩm.</p>
+    <a asp-page="Index" class="btn btn-primary">Quay lại danh sách</a>
+}

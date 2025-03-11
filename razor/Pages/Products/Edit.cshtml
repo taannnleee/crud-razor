@@ -1,0 +1,37 @@
+﻿@page
+@model razor.Pages.Products.EditModel
+
+<h2>Chỉnh sửa Sản Phẩm</h2>
+
+@if (Model.Product != null)
+{
+    <form method="post">
+        <input type="hidden" asp-for="Product.Id" />
+
+        <div class="mb-3">
+            <label asp-for="Product.Name" class="form-label">Tên sản phẩm</label>
+            <input asp-for="Product.Name" class="form-control" />
+            <span asp-validation-for="Product.Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Product.Price" class="form-label">Giá</label>
+            <input asp-for="Product.Price" type="number" class="form-control" />
+            <span asp-validation-for="Product.Price" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Product.Description" class="form-label">Description</label>
+            <input asp-for="Product.Description" class="form-control" />
+            <span asp-validation-for="Product.Description" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Lưu</button>
+        <a asp-page="Index" class="btn btn-secondary">Hủy</a>
+    </form>
+}
+else
+{
+    <p class="text-danger">Không tìm thấy sản phẩm.</p>
+    <a asp-page="Index" class="btn btn-primary">Quay lại danh sách</a>
+}
